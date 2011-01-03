@@ -55,8 +55,8 @@
   [response setObject:responseString forKey:@"responseString"];
   [response setObject:[NSNumber numberWithInt:_statusCode] forKey:@"responseStatusCode"];
   
-	if ([self _isValidDelegateForSelector:@selector(requestSucceeded:HTTPRequest:)]) {
-		[_delegate requestSucceeded:response HTTPRequest:self];
+  if ([self _isValidDelegateForSelector:@selector(requestSucceeded:HTTPRequest:)]) {
+    [_delegate requestSucceeded:response HTTPRequest:self];
   }
   
   [connection release];
@@ -73,8 +73,8 @@
   [response setObject:responseString forKey:@"responseString"];
   [response setObject:[NSNumber numberWithInt:_statusCode] forKey:@"responseStatusCode"];
   
-	if ([self _isValidDelegateForSelector:@selector(requestFailed:HTTPRequest:)]) {
-		[_delegate requestFailed:response HTTPRequest:self];
+  if ([self _isValidDelegateForSelector:@selector(requestFailed:HTTPRequest:)]) {
+    [_delegate requestFailed:response HTTPRequest:self];
   }
   
   [connection release];
@@ -84,7 +84,7 @@
 
 
 - (BOOL)_isValidDelegateForSelector:(SEL)selector {
-	return ((_delegate != nil) && [_delegate respondsToSelector:selector]);
+  return ((_delegate != nil) && [_delegate respondsToSelector:selector]);
 }
 
 
